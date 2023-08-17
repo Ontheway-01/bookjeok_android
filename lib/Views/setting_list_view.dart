@@ -54,7 +54,7 @@ class _SettingListState extends State<SettingListView> {
                     settingHeaderLblList[headerNum],
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 10,
+                      fontSize: 15,
                     ),
                   ),
                   ListView.builder(
