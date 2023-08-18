@@ -14,7 +14,7 @@ class CharacterPage extends StatelessWidget {
       body: Column(
         children: [
           Padding(
-            padding: EdgeInsets.all(15),
+            padding: EdgeInsets.all(10),
             child:Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -40,7 +40,7 @@ class CharacterPage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(20),
+            padding: EdgeInsets.all(15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -78,7 +78,7 @@ class CharacterPage extends StatelessWidget {
               ],
             ),
           Padding(
-            padding: EdgeInsets.all(15),
+            padding: EdgeInsets.all(10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

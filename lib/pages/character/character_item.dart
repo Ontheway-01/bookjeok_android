@@ -16,7 +16,7 @@ class CharacterItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(5),
+      padding: EdgeInsets.all(2),
       child: Column(
         children: [
           Text(
