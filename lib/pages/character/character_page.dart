@@ -132,8 +132,8 @@ class CharacterPage extends StatelessWidget {
           GridView.count(
             shrinkWrap: true,
             crossAxisCount: 4,
-            mainAxisSpacing: 5,
-            crossAxisSpacing: 5,
+            mainAxisSpacing: 2,
+            crossAxisSpacing: 2,
             children: characterData.map((characterItem) => CharacterItem(
                 characterItem.name,
                 characterItem.image,
