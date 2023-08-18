@@ -1,8 +1,8 @@
 import 'package:bookjeok_android/colors/colors.dart';
-import 'package:bookjeok_android/pages/character_page.dart';
-import 'package:bookjeok_android/pages/home_page.dart';
-import 'package:bookjeok_android/pages/library_page.dart';
-import 'package:bookjeok_android/pages/setting_page.dart';
+import 'package:bookjeok_android/pages/character/character_page.dart';
+import 'package:bookjeok_android/pages/home/home_page.dart';
+import 'package:bookjeok_android/pages/library/library_page.dart';
+import 'package:bookjeok_android/pages/setting/setting_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

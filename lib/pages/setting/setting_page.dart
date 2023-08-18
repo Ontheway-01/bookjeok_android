@@ -1,4 +1,4 @@
-import 'package:bookjeok_android/Views/setting_list_view.dart';
+import 'package:bookjeok_android/pages/setting/setting_list_view.dart';
 import 'package:flutter/material.dart';
 class SettingPage extends StatelessWidget {
   const SettingPage({super.key});

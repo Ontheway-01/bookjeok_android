@@ -1,57 +1,70 @@
 import 'package:bookjeok_android/colors/colors.dart';
+import 'package:bookjeok_android/pages/character/character_data.dart';
+import 'package:bookjeok_android/pages/character/character_item.dart';
 import 'package:flutter/material.dart';
+
+import 'character.dart';
 class CharacterPage extends StatelessWidget {
   const CharacterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              //버튼 모서리 둥글게 적용 암된
-               ButtonTheme(
-                  height: 15,
-                  minWidth: 25,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30)
-                  ),
-                  child: ElevatedButton.icon(
-                    onPressed: () {},
-                    icon: Icon(Icons.shopping_cart,size: 10,),
-                    label: Text(
-                      'Store',
-                      style: TextStyle(
-                          fontSize: 10,
+          Padding(
+            padding: EdgeInsets.all(15),
+            child:Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                //버튼 모서리 둥글게 적용 암된
+                 ButtonTheme(
+                    height: 15,
+                    minWidth: 25,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30)
+                    ),
+                    child: ElevatedButton.icon(
+                      onPressed: () {},
+                      icon: Icon(Icons.shopping_cart,size: 10,),
+                      label: Text(
+                        'Store',
+                        style: TextStyle(
+                            fontSize: 10,
+                        ),
                       ),
                     ),
-                  ),
-                )
-            ],
+                  )
+              ],
+            ),
           ),
-
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Text(
-                '나의 캐릭터',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30,
-
+          Padding(
+            padding: EdgeInsets.all(20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  '나의 캐릭터',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30,
+  
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
           Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Image(
-                image: AssetImage('cat.png'),
-                height: 70,
-                width: 70,
+                Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Image(
+                    image: AssetImage('cat.png'),
+                    height: 100,
+                    width: 100,
+                    ),
                 ),
                 ElevatedButton(
                   onPressed: () {},
@@ -116,6 +129,18 @@ class CharacterPage extends StatelessWidget {
                 ),
               ),
           ),
+          GridView.count(
+            shrinkWrap: true,
+            crossAxisCount: 4,
+            mainAxisSpacing: 5,
+            crossAxisSpacing: 5,
+            children: characterData.map((characterItem) => CharacterItem(
+                characterItem.name,
+                characterItem.image,
+                characterItem.height,
+                characterItem.date
+            )).toList(),
+          )
 
 
         ],
