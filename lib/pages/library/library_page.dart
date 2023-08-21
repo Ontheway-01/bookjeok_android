@@ -1,4 +1,5 @@
 import 'package:bookjeok_android/pages/library/library_tab_bar.dart';
+import 'package:bookjeok_android/shared/page_states.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 class LibraryPage extends StatelessWidget {
@@ -46,7 +47,11 @@ class LibraryPage extends StatelessWidget {
               )
             ],
           ),
-          LibraryTabBar()
+          SizedBox(
+            height: MediaQuery.of(context).size.height-150,
+            child: LibraryTabBar(),
+          )
+
         ],
       )
     );

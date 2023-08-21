@@ -10,7 +10,7 @@ class LibraryTabBar extends StatefulWidget {
 
 class _LibraryTabBarState extends State<LibraryTabBar>
     with SingleTickerProviderStateMixin {
-  late TabController tabController = TabController(length: 3, vsync: this);
+  late TabController tabController = TabController(length: 4, vsync: this);
 
   @override
   void initState() {
@@ -37,7 +37,6 @@ class _LibraryTabBarState extends State<LibraryTabBar>
   Widget _body() {
     return Column(
       children: [
-        _pageMoveButton(),
         _tabBar(),
 
         // Expanded 없으면 오류 발생
@@ -103,29 +102,6 @@ class _LibraryTabBarState extends State<LibraryTabBar>
             "Page 4",
             style: TextStyle(fontSize: 40, color: Colors.white),
           ),
-        ),
-      ],
-    );
-  }
-
-  Widget _pageMoveButton() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        ElevatedButton(
-          onPressed: () {
-            /// TabBar는 애니메이션 없이 바로 이동하지만
-            /// TabBarView는 화면 전환 애니메이션 발생
-            tabController.index = 2;
-          },
-          child: const Text("페이지 이동"),
-        ),
-        ElevatedButton(
-          onPressed: () {
-            /// TabBar와 TabBarView 화면 전환 애니메이션 발생
-            tabController.animateTo(2);
-          },
-          child: const Text("페이지 이동(애니메이션)"),
         ),
       ],
     );
