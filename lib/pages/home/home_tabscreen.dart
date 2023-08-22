@@ -40,12 +40,16 @@ Widget _tabBar() {
       fontSize: 16,
     ),
     tabs: [
-      Container(
-        height: 50,
-          alignment: Alignment.center,
+      ButtonTheme(
+      minWidth: 100,//버튼의 최소 가로 길이
+      height: 50, //버튼의 세로 길이
+      shape: RoundedRectangleBorder( //버튼을 둥글게 처리
+          borderRadius: BorderRadius.circular(10)),
+      child: Container(
+        alignment: Alignment.center,
         child: Text(
-          '쌓아보기', style: TextStyle( color: Colors.black,)
-        ),
+            '쌓아보기', style: TextStyle( color: Colors.black ),),
+      )
       ),
       Container(
         height: 50,
