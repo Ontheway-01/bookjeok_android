@@ -32,7 +32,7 @@ class UserProvider with ChangeNotifier{
       List<CustomUser> result = jsonDecode(response.body).map<CustomUser>((json) => CustomUser.formJson(json)).toList();
 
       _users.clear();
-      _users.addAll(result)
+      _users.addAll(result);
       notifyListeners();
     }
   }
