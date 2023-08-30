@@ -75,17 +75,25 @@ class _UserListViewState extends State<UserListView> {
   }
 
   Future<List<CustomUser>> getUser() async{
-    final url = 'http://10.0.2.2:8000/CustomUser';
+    final url = 'http://10.0.2.2:8000/api/user/';
     final uri = Uri.parse(url);
-    final response = await http.get(uri);
-    var data = jsonDecode(response.body.toString());
-    if(response.statusCode == 200){
-      for(Map<String,dynamic> index in data){
-        users.add(CustomUser.formJson(index));
+    try{
+      final response = await http.get(uri);
+      if(response.statusCode == 200){
+        var data = jsonDecode(response.body.toString());
+        for(Map<String,dynamic> index in data){
+          users.add(CustomUser.formJson(index));
+        }
+
       }
-      return users;
-    } else{
-      throw Exception('failed');
     }
+      catch(e){
+        print(e);
+    }
+    return users;
+
+
+
+
   }
 }

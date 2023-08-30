@@ -32,37 +32,52 @@ class _LoginPageState extends State<LoginPage> {
             TextField(
               controller: idController,
               decoration: InputDecoration(hintText: 'id'),
+              onChanged: (text) {
+                print('idTap : $text');
+                login();
+              },
             ),
             TextField(
-              controller: passwordController,
-              decoration: InputDecoration(hintText: 'password'),
+                controller: passwordController,
+                decoration: InputDecoration(hintText: 'password'),
+                onChanged: (text) {
+                  print('pwTap : $text');
+                  print('userpw : ${user.user_password}');
+                  if(text == user.user_password) {
+                    loginSuccess = true;
+                  }
+                },
             ),
             SizedBox(height: 20,),
             ElevatedButton(
               onPressed: () {
-                  login();
-                  if(loginSuccess) {
-                    Navigator.pushAndRemoveUntil(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => PageStates()
-                        ),
-                            (route) => false
-                    );
-                  }
-                  },
+                login();
+                if(loginSuccess) {
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                    builder: (context) => PageStates()
+                    ),
+                    (route) => false
+                  );
+                }
+                else{
 
+                }
+              },
               child: Text('login'),
             ),
             SizedBox(height: 20,),
+
             ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (_) => const SignUpPage()),
-                  );
-                },
+              onPressed: () {
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const SignUpPage()),
+                );
+              },
                 child: Text('sign up'),
+
             ),
           ],
         )
@@ -80,9 +95,7 @@ class _LoginPageState extends State<LoginPage> {
     if(response.statusCode == 200){
       var userInfo = jsonDecode(response.body.toString());
       user = CustomUser.formJson(userInfo);
-      if(identical(user.user_password, passwordController.text) && passwordController.text.isNotEmpty){
-        loginSuccess = true;
-      }
+
     }
   }
 }
