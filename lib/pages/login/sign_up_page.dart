@@ -63,7 +63,7 @@ class _SignUpPageState extends State<SignUpPage> {
       "user_password": password,
     };
 
-    final url = 'http://localhost:8000/api/user/';
+    final url = 'http://127.0.0.1:8000/api/user/';
     final uri = Uri.parse(url);
     final response = await http.post(uri, body: body);
 
