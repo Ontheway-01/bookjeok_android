@@ -19,6 +19,20 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            IconButton(
+              onPressed: () {
+                  Navigator.pop(context);},
+              icon: Icon(Icons.arrow_back_ios_new),
+              padding: EdgeInsets.all(10),)
+          ],
+
+        ),
+      ),
+
       body: ListView(
         padding: EdgeInsets.all(20),
         children: [
