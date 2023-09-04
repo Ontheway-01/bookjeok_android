@@ -15,6 +15,7 @@ class BookjeokApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: coral),
       home: PageStates(),
 

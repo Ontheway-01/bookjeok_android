@@ -1,6 +1,7 @@
 import 'package:bookjeok_android/colors/colors.dart';
 import 'package:bookjeok_android/pages/character/character_page.dart';
 import 'package:bookjeok_android/pages/home/home_page.dart';
+import 'package:bookjeok_android/pages/home/home_page_test.dart';
 import 'package:bookjeok_android/pages/library/library_page.dart';
 import 'package:bookjeok_android/pages/setting/setting_page.dart';
 import 'package:flutter/cupertino.dart';
@@ -17,7 +18,7 @@ class _PageState extends State<PageStates> {
   int _selectedIndex = 0;
 
   List<Widget> pages = <Widget>[
-    HomePage(),
+    HomePageTest(),
     LibraryPage(),
     CharacterPage(),
     SettingPage(),
