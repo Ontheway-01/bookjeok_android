@@ -1,4 +1,5 @@
 import 'package:bookjeok_android/colors/colors.dart';
+import 'package:bookjeok_android/pages/booksearch/book_search_page.dart';
 import 'package:bookjeok_android/pages/login/login_page.dart';
 import 'package:bookjeok_android/pages/test_page.dart';
 import 'package:bookjeok_android/pages/user/user_page.dart';
@@ -17,7 +18,7 @@ class BookjeokApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: coral),
-      home: PageStates(),
+      home: BookSearchPage(),
 
     );
   }
